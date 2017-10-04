@@ -2,7 +2,7 @@
 docker build -t alikhil/sample-node-with-ci .
 docker push alikhil/sample-node-with-ci
 
-ssh alikhil@35.190.205.238 << EOF
+ssh deploy@35.190.205.238 << EOF
 docker pull alikhil/sample-node-with-ci:latest
 docker stop web || true
 docker rm web || true
