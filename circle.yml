@@ -10,3 +10,9 @@ test:
   override:
     - docker run alikhil/sample-node-with-ci npm test
 
+deployment:
+  production:
+    branch: master
+    commands:
+      - docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - chmod +x deploy.sh - sh ./deploy.sh
